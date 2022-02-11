@@ -883,8 +883,8 @@
             "author":"@David",
             "repo":"https://github.com/bluesmallpig/scripts",
             "icons":[
-                "http://script.frp.aiuyo.com:8680/img/zssq-mini.png",
-                "http://script.frp.aiuyo.com:8680/img/zssq.png"
+                "https://github.com/bluesmallpig/scripts/blob/main/img/zssq-mini.png?raw=true",
+                "https://github.com/bluesmallpig/scripts/blob/main/img/zssq.png?raw=true"
             ],
             "script":"https://github.com/"
         }
