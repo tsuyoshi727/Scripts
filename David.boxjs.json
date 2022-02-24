@@ -959,6 +959,78 @@
                 "https://github.com/bluesmallpig/scripts/blob/main/img/wlkd.png"
             ],
             "script":"https://github.com/"
-        }  
+        },
+        {
+            "id":"syncql",
+            "name":"同步青龙",
+            "keys":[
+                "ql_host",
+                "ql_app_id",
+                "ql_secret_key",
+                "sync_ql_key",
+                "sync_ql_remark"
+            ],
+            "settings": [
+            {
+                "id": "ql_host",
+                "name": "青龙访问地址",
+                "val": "http://127.0.0.1:5700",
+                "type": "text",
+                "desc": "填写青龙的访问地址"
+            },
+            {
+                "id": "ql_app_id",
+                "name": "青龙授权id",
+                "val": "",
+                "type": "text",
+                "desc": "填写青龙的第三方授权id"
+            },
+            {
+                "id": "ql_secret_key",
+                "name": "青龙授权秘钥",
+                "val": "",
+                "type": "text",
+                "desc": "填写青龙的第三方授权秘钥"
+            },
+            {
+                "id": "sync_ql_key",
+                "name": "青龙变量名",
+                "val": "",
+                "type": "selects",
+                "items":[
+                    {"key":"dyjsbapp","label":"抖音极速版"},
+                    {"key":"zqkdapp","label":"中青看点"},
+                    {"key":"sjbapp","label":"睡觉宝"},
+                    {"key":"fdxsapp","label":"疯读小说"},
+                    {"key":"djxsapp","label":"得间小说"},
+                    {"key":"qqydapp","label":"QQ阅读"},
+                    {"key":"dzlapp","label":"多走路"},
+                    {"key":"jrttapp","label":"今日头条极速版"},
+                    {"key":"kkdapp","label":"快看点"},
+                    {"key":"sqxsapp","label":"书旗小说"},
+                    {"key":"wlkdapp","label":"文旅看点"},
+                    {"key":"txsapp","label":"淘小说"},
+                    {"key":"zssqapp","label":"追书神器"},
+                    {"key":"fqxsapp","label":"番茄小说"},
+                    {"key":"fqctapp","label":"番茄畅听"}
+                ],
+                "desc": "选择需要同步的APP"
+            },
+            {
+                "id": "sync_ql_remark",
+                "name": "青龙变量备注",
+                "val": "",
+                "type": "text",
+                "desc": "填写需要同步的变量备注信息"
+            }
+            ],
+            "author":"@David",
+            "repo":"https://github.com/bluesmallpig/scripts",
+            "icons":[
+                "https://github.com/bluesmallpig/scripts/blob/main/img/ql-mini.png",
+                "https://github.com/bluesmallpig/scripts/blob/main/img/ql.png"
+            ],
+            "script":"https://raw.githubusercontent.com/bluesmallpig/scripts/main/sync_ql.js"
+        }
     ]
 }
