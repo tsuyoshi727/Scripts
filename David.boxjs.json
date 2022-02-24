@@ -955,8 +955,8 @@
             "author":"@David",
             "repo":"https://github.com/bluesmallpig/scripts",
             "icons":[
-                "https://github.com/bluesmallpig/scripts/blob/main/img/wlkd-mini.png",
-                "https://github.com/bluesmallpig/scripts/blob/main/img/wlkd.png"
+                "https://github.com/bluesmallpig/scripts/blob/main/img/wlkd-mini.png?raw=true",
+                "https://github.com/bluesmallpig/scripts/blob/main/img/wlkd.png?raw=true"
             ],
             "script":"https://github.com/"
         },
@@ -1027,8 +1027,8 @@
             "author":"@David",
             "repo":"https://github.com/bluesmallpig/scripts",
             "icons":[
-                "https://github.com/bluesmallpig/scripts/blob/main/img/ql-mini.png",
-                "https://github.com/bluesmallpig/scripts/blob/main/img/ql.png"
+                "https://github.com/bluesmallpig/scripts/blob/main/img/ql-mini.png?raw=true",
+                "https://github.com/bluesmallpig/scripts/blob/main/img/ql.png?raw=true"
             ],
             "script":"https://raw.githubusercontent.com/bluesmallpig/scripts/main/sync_ql.js"
         },
@@ -1063,8 +1063,8 @@
             "author":"@David",
             "repo":"https://github.com/bluesmallpig/scripts",
             "icons":[
-                "https://github.com/bluesmallpig/scripts/blob/main/img/jrtt-mini.png",
-                "https://github.com/bluesmallpig/scripts/blob/main/img/jrtt.png"
+                "https://github.com/bluesmallpig/scripts/blob/main/img/jrtt-mini.png?raw=true",
+                "https://github.com/bluesmallpig/scripts/blob/main/img/jrtt.png?raw=true"
             ],
             "script":"https://github.com/"
         }
