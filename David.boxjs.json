@@ -850,7 +850,7 @@
                 "https://github.com/bluesmallpig/scripts/blob/main/img/sync-mini.png?raw=true",
                 "https://github.com/bluesmallpig/scripts/blob/main/img/sync.png?raw=true"
             ],
-            "script":"https://raw.githubusercontent.com/bluesmallpig/scripts/main/sync_key.js"
+            "script":"https://raw.githubusercontent.com/bluesmallpig/scripts/main/sync_v2p.js"
         },
 	{
             "id":"zssqapp",
