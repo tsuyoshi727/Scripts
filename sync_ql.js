@@ -48,13 +48,13 @@ async function getToken() {
             await search(env_key, env_value);
         }else{
             $.log(`📢 新增变量: ${env_key}没有初始化，请先完成抓取后，再同步`)
-            content += `新增变量: ${env_key}没有初始化，请先完成抓取后，再同步 \n`
+            content += `新增变量: ${env_key}没有初始化，请先完成抓取或者设置后，再同步 \n`
         }
         if(active_code_value) {
             await search(active_code_key, active_code_value);
         }else{
             $.log(`📢 新增变量: ${active_code_key}没有初始化，请先完成抓取后，再同步`)
-            content += `新增变量: ${active_code_key}没有初始化，请先完成抓取后，再同步 \n`
+            content += `新增变量: ${active_code_key}没有初始化，请先完成抓取或者设置后，再同步 \n`
         }
     } else {
         $.log(`获取Token失败: ${result.message}`)
