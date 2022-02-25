@@ -12,10 +12,12 @@ const debug = 0;
 // 0:关闭通知，1:默认开启
 let tz = ($.getval('tz') || '1');
 let httpResult = ''
+let content = ''
 let token = ''
 
 !(async () => {
     await checkEnv();
+    await sendMsg(content);
 })()
     .catch((e) => $.logErr(e))
     .finally(() => $.done())
@@ -23,7 +25,7 @@ let token = ''
 async function checkEnv() {
     if (!ql_host || !ql_app_id || !ql_secret_key) {
         $.log(`🔔 配置参数不全，请先完成配置再运行`)
-        await sendMsg(`🔔 配置参数不全，请先完成配置再运行`)
+        content += `🔔 配置参数不全，请先完成配置再运行`
         return;
     }else{
         env_key = env_key.toUpperCase();
@@ -42,32 +44,43 @@ async function getToken() {
     let result = httpResult;
     if (result.code == 200) {
         token = result.data.token;
-        await search(env_key);
-        await search(active_code_key);
+        if(env_value) {
+            await search(env_key, env_value);
+        }else{
+            $.log(`📢 新增变量: ${env_key}没有初始化，请先完成抓取后，再同步`)
+            content += `新增变量: ${env_key}没有初始化，请先完成抓取后，再同步 \n`
+        }
+        if(active_code_value) {
+            await search(active_code_key, active_code_value);
+        }else{
+            $.log(`📢 新增变量: ${active_code_key}没有初始化，请先完成抓取后，再同步`)
+            content += `新增变量: ${active_code_key}没有初始化，请先完成抓取后，再同步 \n`
+        }
     } else {
         $.log(`获取Token失败: ${result.message}`)
+        content += `获取Token失败: ${result.message} \n`
     }
 }
 
-async function search(keyword) {
-    let url = `${ql_host}/open/envs?searchValue=${keyword}`
+async function search(key, value) {
+    let url = `${ql_host}/open/envs?searchValue=${key}`
     let requestObject = getReqObject(url, `{}`)
     await httpRequest('get', requestObject, printCaller())
     let result = httpResult;
     if (result.code == 200) {
         appCookie = result.data;
         if (appCookie.length > 0) {
-            $.log(`📢 找到青龙环境变量，开始执行更新操作`)
+            $.log(`📢 找到青龙环境变量: ${key}，开始执行更新操作`)
             for (let i = 0; i < appCookie.length; i++) {
                 // 更新
-                await update(env_key, env_value, env_remark, appCookie[i].id);
+                await update(key, value, env_remark, appCookie[i].id);
             }
-            await sendMsg(`更新变量: ${env_key} 成功`)
+            content += `更新变量: ${key} 成功 \n`
         } else {
-            $.log(`📢 没有找到青龙环境变量，开始执行新增操作`)
+            $.log(`📢 没有找到青龙环境变量: ${key}，开始执行新增操作`)
             // 新增
-            await add(env_key, env_value, env_remark);
-            await sendMsg(`新增变量: ${env_key} 成功`)
+            await add(key, value, env_remark);
+            content += `新增变量: ${key} 成功 \n`
         }
     } else {
         $.log(`查找青龙变量失败: ${result.message}`)
